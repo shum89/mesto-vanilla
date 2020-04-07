@@ -1,0 +1,10 @@
+.header__logo {
+    transition: ease all .5s;
+}
+
+
+@media screen and (max-width: 320px) {
+    .header__logo {
+        margin-left: 27px;
+    }
+}
