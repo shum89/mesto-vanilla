@@ -2,26 +2,31 @@
 
 .header {
     max-width: 1200px;
-    width: 68.6%;
+    width: 68.89%;
+    min-height: 74px;
     display: flex;
     justify-content: flex-start;
     margin-top: 45px;
     position: relative;
+    transition: ease all .5s;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    margin-bottom: 36.25px;
+    box-sizing: border-box;
 }
 
-.header::after {
+/* .header::after {
     content: '';
     width: 100%;
     opacity: 0.7;
     border: 1px solid #545454;  
     position: absolute;
-    bottom: -45px;
+    bottom: -40px;
     box-sizing: border-box;
-}
+} */
 
 @media screen and (max-width: 320px) {
     .header {
         width: 100%;
-        transition: ease all .5s;
+        min-height: 56px;
     }
 }

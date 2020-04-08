@@ -1,5 +1,6 @@
 .header__logo {
     transition: ease all .5s;
+    max-height: 34px;
 }
 
 
