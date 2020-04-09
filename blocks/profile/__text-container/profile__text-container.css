@@ -1,0 +1,11 @@
+.profile__text-container {
+    display: flex;
+}
+
+
+@media screen and (max-width: 375px) {
+    .profile__text-container {
+        margin-right: 0;
+        justify-content: space-between;
+    }
+}

@@ -4,4 +4,12 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    margin-right: 30px;
+}
+
+
+@media screen and (max-width: 375px) {
+    .profile__avatar {
+        margin: 0;
+    }
 }
