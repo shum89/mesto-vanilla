@@ -2,9 +2,11 @@
 @import url(./__container/popup__container.css);
 @import url(./__title/popup__title.css);
 @import url(./__form/popup__form.css);
-@import url(./__input/popup__input.css);
+@import url(./__input-title/popup__input-title.css);
+@import url(./__input-subtitle/popup__input-subtitle.css);
 @import url(./__button-submit/popup__button-submit.css);
-@import url(./_is-open/popup_is-open.css);
+@import url(./_hidden/popup_hidden.css);
+@import url(./_opened/popup_opened.css);
 
 .popup {
     position: fixed;
@@ -13,5 +15,4 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    display: flex;
 }
