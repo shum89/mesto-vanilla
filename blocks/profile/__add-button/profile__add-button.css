@@ -10,7 +10,7 @@
     align-self: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1000px) {
     .profile__add-button {
         width: 100%;
         background-size: 16px;

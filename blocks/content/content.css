@@ -3,9 +3,8 @@
 }
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 842px) {
     .content {
-        max-width: 282px;
         width: 100%;
     }
 } 

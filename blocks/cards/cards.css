@@ -10,4 +10,6 @@
     grid-template-columns:repeat(auto-fill, 281px);
     grid-gap: 18px 18px;
     justify-content: center;
+    margin-bottom: 60px;
 }
+
