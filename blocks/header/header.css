@@ -14,17 +14,8 @@
     box-sizing: border-box;
 }
 
-/* .header::after {
-    content: '';
-    width: 100%;
-    opacity: 0.7;
-    border: 1px solid #545454;  
-    position: absolute;
-    bottom: -40px;
-    box-sizing: border-box;
-} */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 842px) {
     .header {
         width: 100%;
         min-height: 56px;

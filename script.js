@@ -1,15 +1,15 @@
-let popup = document.querySelector('.popup');
-let popupContainer = popup.querySelector('.popup__container');
-let popupForm = popupContainer.querySelector('.popup__form');
+const popup = document.querySelector('.popup');
+const popupContainer = popup.querySelector('.popup__container');
+const popupForm = popupContainer.querySelector('.popup__form');
 let popupInputTitle = popupContainer.querySelector('.popup__input-title');
 let popupInputSubtitle = popupContainer.querySelector('.popup__input-subtitle');
-let buttonSubmit = popupContainer.querySelector('.popup__button-submit');
-let buttonClose = popupContainer.querySelector('.popup__button-close');
+const buttonSubmit = popupContainer.querySelector('.popup__button-submit');
+const buttonClose = popupContainer.querySelector('.popup__button-close');
 
-let profile = document.querySelector('.profile');
+const profile = document.querySelector('.profile');
 let profileTitle = profile.querySelector('.profile__title');
 let profileSubtitle = profile.querySelector('.profile__subtitle');
-let editButton = profile.querySelector('.profile__edit-button');
+const editButton = profile.querySelector('.profile__edit-button');
 
 
 

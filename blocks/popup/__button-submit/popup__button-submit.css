@@ -12,3 +12,9 @@
   box-sizing: border-box;
   align-self: center;
 }
+
+.popup__button-submit:hover {
+    background-color:rgba(0, 0, 0, 0.8);
+    transition: ease-in 0.3s;
+    cursor: pointer;
+}
