@@ -3,7 +3,6 @@
 .header {
     max-width: 1200px;
     width: 68.89%;
-    min-height: 74px;
     display: flex;
     justify-content: flex-start;
     margin-top: 45px;
@@ -18,7 +17,6 @@
 @media screen and (max-width: 842px) {
     .header {
         width: 100%;
-        min-height: 56px;
         margin-bottom: 40px;
         margin-top: 28px;
     }
