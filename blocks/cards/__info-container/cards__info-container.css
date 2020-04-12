@@ -1,6 +1,8 @@
 .cards__info-container {
-    width: 246px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding-left: 21px;
+    padding-right: 21px;
+    justify-content: space-between;
+    min-height: 76px;
 }
