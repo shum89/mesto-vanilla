@@ -11,6 +11,59 @@ let profileTitle = profile.querySelector('.profile__title');
 let profileSubtitle = profile.querySelector('.profile__subtitle');
 const editButton = profile.querySelector('.profile__edit-button');
 
+const card = document.querySelector('.cards');
+
+let checkIfWindowLoading = false;
+
+window.onload = function () {
+    checkIfWindowLoading = true;
+    console.log(checkIfWindowLoading);
+}
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+// добавляем карточки
+function addCards (name, link) {
+    const cardsTemplate = document.querySelector('#cards').content;
+
+
+            const cardsElement = cardsTemplate.cloneNode(true);
+        
+            let cardsPhoto = cardsElement.querySelector('.cards__photo');
+        
+            let cardsTitle = cardsElement.querySelector('.cards__title');
+        
+            cardsPhoto.setAttribute('src',`${link}`);
+            cardsPhoto.setAttribute('alt',`${name}`);
+            cardsTitle.textContent = `${name}`;
+            card.append(cardsElement);   
+}
+    
+
 
 // открывающая и закрывающая popup функиця
 function openOrClosePopup() {
@@ -32,10 +85,14 @@ function formSubmitHandler (evt) {
     openOrClosePopup();
 }
 
+window.onload = initialCards.forEach((item) => {
+    addCards(item.name, item.link);
+})
 
 popupForm.addEventListener('submit',formSubmitHandler);
 
 editButton.addEventListener('click', openOrClosePopup);
 
 buttonClose.addEventListener('click', openOrClosePopup);
+
 
