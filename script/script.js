@@ -13,12 +13,7 @@ const editButton = profile.querySelector('.profile__edit-button');
 
 const card = document.querySelector('.cards');
 
-let checkIfWindowLoading = false;
 
-window.onload = function () {
-    checkIfWindowLoading = true;
-    console.log(checkIfWindowLoading);
-}
 
 const initialCards = [
     {
