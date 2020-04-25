@@ -40,8 +40,8 @@
     
     <div class="popup popup_hidden">
       <div class="popup__container">
-        <button class="popup__button-close" type="button"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
+        <button class="button-close" type="button"></button>
+        <h2 class="popup__title"></h2>
         <form class="popup__form" name="edit-profile" method="post" action="#">
           <input class="popup__input-title" type="text" />
           <input class="popup__input-subtitle" type="text" />
@@ -57,7 +57,7 @@
             alt=""
             src=""
           />
-
+          <button class="cards__delete-button"></button>
             <div class="cards__info-container">
               <h2 class="cards__title"></h2>
               <button class="cards__like" type="button"></button>
@@ -65,6 +65,15 @@
           </div>
         </div>
       </template>
+
+        <figure class="popup-image popup-image_closed" >
+          <div class="popup-image__container">
+          <button class="button-close" type="button"></button>
+            <img class="popup-image__photo" src="./images/place-1.jpg" alt="">
+            <figcaption class="popup-image__caption">Архангельск</figcaption>
+          </div>
+        </figure>
+
     <script src="./script/script.js"></script>
   </body>
 </html>

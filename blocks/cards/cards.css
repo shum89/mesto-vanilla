@@ -1,9 +1,11 @@
 @import url(./__card/cards__card.css);
 @import url(./__info/cards__info.css);
 @import url(./__like/cards__like.css);
+@import url(./__like/_active/cards__like_active.css);
 @import url(./__photo/cards__photo.css);
 @import url(./__title/cards__title.css);
 @import url(./__info-container/cards__info-container.css);
+@import url(./__delete-button/cards__delete-button.css);
 
 .cards {
     display: grid;

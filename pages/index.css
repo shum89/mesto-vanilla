@@ -6,4 +6,6 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/button-close/button-close.css);
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup-image/popup-image.css);
