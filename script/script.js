@@ -67,18 +67,18 @@ function addCards(name, link) {
   let cardsLikeButton = cardsElement.querySelector(".cards__like");
   const cardsDeletButton = cardsElement.querySelector(".cards__delete-button");
 
-  cardsPhoto.setAttribute("src", `${link}`);
-  cardsPhoto.setAttribute("alt", `${name}`);
-  cardsTitle.textContent = `${name}`;
+  cardsPhoto.setAttribute("src", link);
+  cardsPhoto.setAttribute("alt", name);
+  cardsTitle.textContent = name;
 
   card.prepend(cardsElement);
 
   //открываем popup-image
   cardsPhoto.addEventListener("click", function () {
     popupImageCaption.textContent = cardsTitle.textContent;
-    popupImagePhoto.setAttribute("src", `${link}`);
-    popupImagePhoto.setAttribute("alt", `${name}`);
-    return openOrClosePopup(`${cardsTitle.textContent}`);
+    popupImagePhoto.setAttribute("src", link);
+    popupImagePhoto.setAttribute("alt", name);
+    return openOrClosePopup(cardsTitle.textContent);
   });
 
   // cтавим лайки к карточкам
@@ -120,11 +120,10 @@ function openOrClosePopup(title) {
       buttonSubmit.textContent = "Cоздать";
       popup.classList.toggle("popup_hidden");
       popup.classList.toggle("popup_opened");
-      popupTitle.textContent = title;
       break;
     }
     // часть функции которая открывает и закрывает popup-image
-    case `${popupImageCaption.textContent}`: {
+    case popupImageCaption.textContent: {
       popupImage.classList.toggle("popup-image_opened");
       popupImage.classList.toggle("popup-image_closed");
       break;
@@ -170,7 +169,7 @@ buttonClose.forEach((item) => {
     if (evt.target.parentNode.classList.contains("popup__container")) {
       return openOrClosePopup(popupTitle.textContent);
     } else {
-      return openOrClosePopup(`${popupImageCaption.textContent}`);
+      return openOrClosePopup(popupImageCaption.textContent);
     }
   });
 });
