@@ -1,0 +1,5 @@
+.button-close_hover:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: linear 0.5s;
+}
