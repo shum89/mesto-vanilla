@@ -1,7 +1,7 @@
 @import url(./__photo/popup-image__photo.css);
 @import url(./__caption/popup-image__caption.css);
 @import url(./__container/popup-image__container.css);
-@import url(./_closed/popup-image_closed.css);
+@import url(./_hidden/popup-image_hidden.css);
 @import url(./_opened/popup-image_opened.css);
 
 .popup-image {
