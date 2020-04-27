@@ -94,12 +94,11 @@ function addCards(name, link) {
 
 // открывающая и закрывающая popup функиця теперь с параметром title
 function openOrClosePopup(title) {
-  // выводим title в заголовок
-  // проверяем есть ли класс скрывающий popup
 
   //тк два popup идентичны по функционалу и различатются только названием делаем проверку
   switch (title) {
     case 'Редактировать Профиль': {
+    // выводим title в заголовок
       popupTitle.textContent = title;
       popupInputTitle.value = profileTitle.textContent;
       popupInputSubtitle.value = profileSubtitle.textContent;
@@ -111,6 +110,7 @@ function openOrClosePopup(title) {
       break;
     }
     case 'Новое Место': {
+      popupTitle.textContent = title;
       //очищаем форму, если надо добавить карточки
       popupInputTitle.value = '';
       popupInputSubtitle.value = '';
