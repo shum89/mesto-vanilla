@@ -1,15 +1,18 @@
-.cards__like {
-    background-image: url(../../../images/like.svg);
+.card__delete-button {
+    background-image: url(../../../images/bin.svg);
     background-position: center;
     background-repeat: no-repeat;
     border: none;
     background-size: contain;
-    width: 21px;
-    height: 19px;
+    width: 18px;
+    height: 19.3px;
     background-color: transparent;
+    position: absolute;
+    top: 18px;
+    right: 15px;
 }
 
-.cards__like:hover {
+.card__delete-button:hover {
     opacity: 0.6;
     transition: ease-in 0.3s;
     cursor: pointer;

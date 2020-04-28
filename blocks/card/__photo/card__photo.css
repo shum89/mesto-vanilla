@@ -1,4 +1,4 @@
-.cards__photo {
+.card__photo {
     height: 282px;
     width: 282px;
     object-fit: cover;
@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-.cards__photo::before {
+.card__photo::before {
     height: 282px;
     width: 282px;
     content: '';

@@ -1,0 +1,12 @@
+@import url(./__title/card__title.css);
+@import url(./__photo/card__photo.css);
+@import url(./__like/card__like.css);
+@import url(./__like/_active/card__like_active.css);
+@import url(./__info-container/card__info-container.css);
+@import url(./__delete-button/card__delete-button.css);
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
