@@ -7,6 +7,9 @@
 @import url(./__button-submit/popup__button-submit.css);
 @import url(./_hidden/popup_hidden.css);
 @import url(./_opened/popup_opened.css);
+@import url(./__image-container/popup__image-container.css);
+@import url(./__photo/popup__photo.css);
+@import url(./__caption/popup__caption.css);
 
 .popup {
     position: fixed;

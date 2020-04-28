@@ -38,17 +38,40 @@
       </p>
     </footer>
     
-    <div class="popup popup_hidden">
+
+    <div class="popup popup_hidden" id="popup-edit">
       <div class="popup__container">
-        <button class="button-close" type="button"></button>
-        <h2 class="popup__title"></h2>
+        <button class="popup__button-close" type="button"></button>
+        <h2 class="popup__title">Редактировать Профиль</h2>
         <form class="popup__form" name="edit-profile" method="post" action="#">
-          <input class="popup__input-title" type="text" />
-          <input class="popup__input-subtitle" type="text" />
+          <input class="popup__input-title" type="text" placeholder="ФИО"/>
+          <input class="popup__input-subtitle" type="text" placeholder="Профессия"/>
           <button class="popup__button-submit" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
+
+    <div class="popup popup_hidden" id="popup-add">
+      <div class="popup__container">
+        <button class="popup__button-close" type="button"></button>
+        <h2 class="popup__title">Новое Место</h2>
+        <form class="popup__form" name="edit-profile" method="post" action="#">
+          <input class="popup__input-title" type="text"/ placeholder="Название">
+          <input class="popup__input-subtitle" type="text" placeholder="Ссылка на картинку"/>
+          <button class="popup__button-submit" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="popup popup_hidden" id="popup-image">
+      <figure class="popup__image-container">
+      <button class="popup__button-close" type="button"></button>
+        <img class="popup__photo" src="./images/place-1.jpg" alt="">
+        <figcaption class="popup__caption"></figcaption>
+      </figure>
+    </div>
+
 
     <template id="cards">
       <div class="cards__card">
@@ -64,14 +87,6 @@
             </div>
           </div>
       </template>
-
-        <div class="popup-image popup-image_hidden">
-          <figure class="popup-image__container">
-          <button class="button-close" type="button"></button>
-            <img class="popup-image__photo" src="./images/place-1.jpg" alt="">
-            <figcaption class="popup-image__caption"></figcaption>
-          </figure>
-        </div>
 
     <script src="./script/script.js"></script>
   </body>
