@@ -134,12 +134,14 @@ function createCard(name, link) {
 function renderEditProfilePopup() {
   popupEditProfileInputTitle.value = profileTitle.textContent;
   popupEditProfileInputSubtitle.value = profileSubtitle.textContent;
+  popupEditProfile.classList.toggle('popup_form-background');
 }
 
 // отрисовывваем popup  с добавлением карточек
 function renderAddCardsPopup() {
   popupAddCardInputTitle.value = '';
   popupAddCardInputSubtitle.value = '';
+  popupAddCard.classList.toggle('popup_form-background');
 }
 
 function renderImagePopup(evt) {
@@ -147,6 +149,7 @@ function renderImagePopup(evt) {
   popupImagePhoto.setAttribute('src', targetPhoto.src);
   popupImagePhoto.setAttribute('alt', targetPhoto.alt);
   popupImageCaption.textContent = targetPhoto.alt;
+  popupImage.classList.toggle('popup_image-background');
 }
 
 // открывающая и закрывающая popup функиця теперь с параметром title
