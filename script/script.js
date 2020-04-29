@@ -96,11 +96,7 @@ function toggleLike(evt) {
 // функция удаления карточки
 function removeCard(evt) {
   return evt.target.closest('.card').remove();
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> develop
 
 // создаем карточки
 
@@ -132,28 +128,18 @@ function createCard(name, link) {
   });
 
   return cardElement;
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> develop
 
 // отрисовываем popup редактирования профиля
 function renderEditProfilePopup() {
   popupEditProfileInputTitle.value = profileTitle.textContent;
   popupEditProfileInputSubtitle.value = profileSubtitle.textContent;
-<<<<<<< HEAD
-};
-=======
-  popupEditProfile.classList.toggle('popup_form-background');
 }
->>>>>>> develop
 
 // отрисовывваем popup  с добавлением карточек
 function renderAddCardsPopup() {
   popupAddCardInputTitle.value = '';
   popupAddCardInputSubtitle.value = '';
-  popupAddCard.classList.toggle('popup_form-background');
 }
 
 function renderImagePopup(evt) {
@@ -161,12 +147,7 @@ function renderImagePopup(evt) {
   popupImagePhoto.setAttribute('src', targetPhoto.src);
   popupImagePhoto.setAttribute('alt', targetPhoto.alt);
   popupImageCaption.textContent = targetPhoto.alt;
-<<<<<<< HEAD
-};
-=======
-  popupImage.classList.toggle('popup_image-background');
 }
->>>>>>> develop
 
 // открывающая и закрывающая popup функиця теперь с параметром title
 function openOrClosePopup(id) {
@@ -185,13 +166,8 @@ function openOrClosePopup(id) {
       popupImage.classList.toggle('popup_hidden');
       popupImage.classList.toggle('popup_opened');
       break;
-<<<<<<< HEAD
-  };
-};
-=======
   }
 }
->>>>>>> develop
 
 // отправляем изменения в profile или создаем карточку
 function formSubmitHandler(evt, id) {
@@ -206,13 +182,8 @@ function formSubmitHandler(evt, id) {
       createCard(popupAddCardInputTitle.value, popupAddCardInputSubtitle.value)
     );
     openOrClosePopup(popupAddCard.id);
-<<<<<<< HEAD
-  };
-};
-=======
   }
 }
->>>>>>> develop
 
 // открываем popup edit
 editButton.addEventListener('click', function () {
