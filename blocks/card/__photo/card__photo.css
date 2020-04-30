@@ -4,19 +4,8 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px 10px 0px 0px;
-    line-height: 282px;
     text-align: center;
     font-size: 30px;
     box-sizing: border-box;
 }
 
-.card__photo::before {
-    height: 282px;
-    width: 282px;
-    content: '';
-    display: inline-block;
-    background: black;
-    border: white 1px solid;
-    border-radius: 10px 10px 0px 0px;
-    box-sizing: border-box;
-}

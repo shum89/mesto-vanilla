@@ -28,8 +28,8 @@
         <button class="profile__add-button" type="button"></button>
       </section>
 
-      <section class="cards">
-      </section>
+      <ul class="cards">
+      </ul>
     </main>
 
     <footer class="footer">
@@ -67,14 +67,14 @@
     <div class="popup popup_hidden popup_image-background" id="popup-image">
       <figure class="popup__image-container">
       <button class="popup__button-close" type="button"></button>
-        <img class="popup__photo" src="./images/place-1.jpg" alt="">
+        <img class="popup__photo" src="" alt="">
         <figcaption class="popup__caption"></figcaption>
       </figure>
     </div>
 
 
     <template id="card">
-      <div class="card">
+      <li class="card">
           <img
             class="card__photo"
             alt=""
@@ -85,7 +85,7 @@
               <h2 class="card__title"></h2>
               <button class="card__like" type="button"></button>
             </div>
-          </div>
+          </li>
       </template>
 
     <script src="./script/script.js"></script>
