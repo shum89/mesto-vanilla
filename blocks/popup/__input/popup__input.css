@@ -1,7 +1,8 @@
-.popup__input-subtitle {
+
+.popup__input {
   width: 100%;
   box-sizing: border-box;
-  border: 0;
+  border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
   min-height: 40px;
@@ -9,5 +10,4 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  margin-bottom: 48px;
 }
