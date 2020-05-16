@@ -2,14 +2,17 @@
 @import url(./__container/popup__container.css);
 @import url(./__title/popup__title.css);
 @import url(./__form/popup__form.css);
-@import url(./__input-title/popup__input-title.css);
-@import url(./__input-subtitle/popup__input-subtitle.css);
+@import url(./__input/popup__input.css);
 @import url(./__button-submit/popup__button-submit.css);
 @import url(./__image-container/popup__image-container.css);
 @import url(./__photo/popup__photo.css);
 @import url(./__caption/popup__caption.css);
-@import url(./_image-background/popup_image-background.css);
-@import url(./_form-background/popup_form-background.css);
+@import url(./__input-error/popup__input-error.css);
+@import url(./__input/_type/popup__input_type_error.css);
+@import url(./__overlay/popup__overlay.css);
+@import url(./__overlay-image/popup__overlay-image.css);
+@import url(./__overlay/_image/popup__overlay_image.css);
+@import url(./__form-label/popup__form-label.css);
 
 .popup {
     position: fixed;

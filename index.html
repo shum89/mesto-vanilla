@@ -39,37 +39,52 @@
     </footer>
     
 
-    <div class="popup popup_hidden popup_form-background" id="popup-edit">
+    <div class="popup popup_hidden" id="popup-edit">
       <div class="popup__container">
         <button class="popup__button-close" type="button"></button>
         <h2 class="popup__title">Редактировать Профиль</h2>
-        <form class="popup__form" name="edit-profile" method="post" action="#">
-          <input class="popup__input-title" type="text" placeholder="ФИО"/>
-          <input class="popup__input-subtitle" type="text" placeholder="Профессия"/>
-          <button class="popup__button-submit" type="submit">Сохранить</button>
+        <form class="popup__form" name="edit-profile" method="post" action="#" novalidate>
+          <label class="popup__form-label">
+            <input class="popup__input" id="input-title" type="text" placeholder="ФИО" minlength="7" maxlength="20" pattern="[а-яА-яA-Za-z\s\-]{1,}"required/>
+            <span class="popup__input-error" id="input-title-error"> </span>
+          </label>
+          <label class="popup__form-label">
+            <input class="popup__input" id="input-subtitle" type="text" placeholder="Профессия" minlength="2" maxlength="200" required/>
+            <span class="popup__input-error" id="input-subtitle-error"> </span>
+          </label>
+          <button class="popup__button-submit popup__button-submit_disabled popup__button-submit_action" type="submit">Сохранить</button>
         </form>
       </div>
+      <div class="popup__overlay"></div>
     </div>
 
-    <div class="popup popup_hidden popup_form-background" id="popup-add-card">
+    <div class="popup popup_hidden" id="popup-add-card">
       <div class="popup__container">
         <button class="popup__button-close" type="button"></button>
         <h2 class="popup__title">Новое Место</h2>
-        <form class="popup__form" name="edit-profile" method="post" action="#">
-          <input class="popup__input-title" type="text" placeholder="Название">
-          <input class="popup__input-subtitle" type="text" placeholder="Ссылка на картинку"/>
-          <button class="popup__button-submit" type="submit">Создать</button>
+        <form class="popup__form" name="edit-profile" method="post" action="#" novalidate>
+          <label class="popup__form-label">
+            <input class="popup__input" id="input-title" type="text" placeholder="Название" minlength="1" maxlength="30" patternrequired>
+            <span class="popup__input-error" id="input-title-error"></span>
+          </label>
+          <label class="popup__form-label">
+            <input class="popup__input" id="input-subtitle" type="url" placeholder="Ссылка на картинку" required/>
+            <span class="popup__input-error" id="input-subtitle-error"></span>
+          </label>
+          <button class="popup__button-submit popup__button-submit_action popup__button-submit_disabled"  type="submit">Создать</button>
         </form>
       </div>
+      <div class="popup__overlay"></div>
     </div>
 
 
-    <div class="popup popup_hidden popup_image-background" id="popup-image">
+    <div class="popup popup_hidden" id="popup-image">
       <figure class="popup__image-container">
       <button class="popup__button-close" type="button"></button>
         <img class="popup__photo" src="" alt="">
         <figcaption class="popup__caption"></figcaption>
       </figure>
+      <div class="popup__overlay_image popup__overlay"></div>
     </div>
 
 
@@ -87,7 +102,9 @@
             </div>
           </li>
       </template>
-
+   
     <script src="./script/script.js"></script>
+    <script src="./script/validate.js"></script>
+ 
   </body>
 </html>
