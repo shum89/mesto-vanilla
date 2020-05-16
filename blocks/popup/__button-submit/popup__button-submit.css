@@ -1,7 +1,8 @@
+@import url(./_action/popup__button-submit_action.css);
+@import url(./_disabled/popup__button-submit_disabled.css);
+
 .popup__button-submit {
   width: 83.25%;
-  color: white;
-  background-color: black;
   text-align: center;
   font-style: normal;
   font-weight: normal;
@@ -12,9 +13,11 @@
   box-sizing: border-box;
   align-self: center;
 }
+.popup__button-submit:disabled {
+  border: 1px solid;
+}
 
-.popup__button-submit:hover {
-    background-color:rgba(0, 0, 0, 0.8);
-    transition: ease-in 0.3s;
-    cursor: pointer;
+.popup__button-submit:disabled:hover {
+  cursor: default;
+  background-color: transparent;
 }
