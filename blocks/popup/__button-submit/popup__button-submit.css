@@ -12,6 +12,7 @@
   margin-bottom: 36px;
   box-sizing: border-box;
   align-self: center;
+  outline: none;
 }
 .popup__button-submit:disabled {
   border: 1px solid;

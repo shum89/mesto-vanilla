@@ -7,6 +7,7 @@
     width: 21px;
     height: 19px;
     background-color: transparent;
+    outline: none;
 }
 
 .card__like:hover {

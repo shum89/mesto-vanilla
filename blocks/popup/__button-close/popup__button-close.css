@@ -9,6 +9,7 @@
     right: -36px;
     border: none;
     box-sizing: border-box;
+    outline: none;
 }
 
 .popup__button-close:hover {
