@@ -1,5 +1,4 @@
 export class FormValidator {
-    
   constructor(data, formSelector) {
     this._formSelector = formSelector;
     this._inputSelector = data.inputSelector;
@@ -11,9 +10,7 @@ export class FormValidator {
 
   // проверяем есть ли невалидный инпут
   _hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
-      });
+    return inputList.some((inputElement) => !inputElement.validity.valid);
   }
 
   // устанавливаем состояние кнопки
@@ -30,7 +27,7 @@ export class FormValidator {
 
   // тогглим состояние кнопки
   _toggleButtonState(buttonElement, inputList) {
-      this._setButtonState(buttonElement, this._hasInvalidInput(inputList));
+    this._setButtonState(buttonElement, this._hasInvalidInput(inputList));
   }
 
   // показываем ошибку

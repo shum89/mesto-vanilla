@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./vendor/normalize.css" />
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
   <body class="page">
@@ -38,18 +36,17 @@
       </p>
     </footer>
     
-
     <div class="popup popup_type_hidden" id="popup-edit">
       <div class="popup__container">
         <button class="popup__button-close" type="button"></button>
         <h2 class="popup__title">Редактировать Профиль</h2>
         <form class="popup__form" name="edit-profile" method="post" action="#" novalidate>
           <label class="popup__form-label">
-            <input class="popup__input" id="input-title" type="text" placeholder="ФИО" minlength="2" maxlength="20" pattern="[^\s\-]+[a-zA-ZА-ЯЁа-яё\s\-]+[^\s\-]+"required/>
+            <input class="popup__input" id="input-title" name="name" type="text" placeholder="ФИО" minlength="2" maxlength="20" pattern="[a-zA-ZА-ЯЁа-яё\s\-]+"required/>
             <span class="popup__input-error" id="input-title-error"> </span>
           </label>
           <label class="popup__form-label">
-            <input class="popup__input" id="input-subtitle" type="text" placeholder="Профессия" minlength="2" maxlength="200" pattern="^[^\s\-].+[^\s']$" required/>
+            <input class="popup__input" id="input-subtitle" name="occupation" type="text" placeholder="Профессия" minlength="2" maxlength="200" pattern="^[^\s\-].+[^\s']$" required/>
             <span class="popup__input-error" id="input-subtitle-error"> </span>
           </label>
           <button class="popup__button-submit popup__button-submit_action" type="submit">Сохранить</button>
@@ -64,11 +61,11 @@
         <h2 class="popup__title">Новое Место</h2>
         <form class="popup__form" name="add-card" method="post" action="#" novalidate>
           <label class="popup__form-label">
-            <input class="popup__input" id="input-title" type="text" placeholder="Название" minlength="1" maxlength="30" required>
+            <input class="popup__input" id="input-title" name="name" type="text" placeholder="Название" minlength="1" maxlength="30" required>
             <span class="popup__input-error" id="input-title-error"></span>
           </label>
           <label class="popup__form-label">
-            <input class="popup__input" id="input-subtitle" type="url" placeholder="Ссылка на картинку" required/>
+            <input class="popup__input" id="input-subtitle" name="link" type="url" placeholder="Ссылка на картинку" required/>
             <span class="popup__input-error" id="input-subtitle-error"></span>
           </label>
           <button class="popup__button-submit popup__button-submit_action"  type="submit">Создать</button>
@@ -77,23 +74,21 @@
       <div class="popup__overlay"></div>
     </div>
 
-
     <div class="popup popup_type_hidden" id="popup-image">
       <figure class="popup__image-container">
       <button class="popup__button-close" type="button"></button>
-        <img class="popup__photo" src="" alt="">
+        <img class="popup__photo" src="#" alt="#">
         <figcaption class="popup__caption"></figcaption>
       </figure>
       <div class="popup__overlay_image popup__overlay"></div>
     </div>
 
-
     <template id="card">
       <li class="card">
           <img
             class="card__photo"
-            alt=""
-            src=""
+            alt="#"
+            src="#"
           />
           <button class="card__delete-button"></button>
             <div class="card__info-container">
@@ -102,7 +97,5 @@
             </div>
           </li>
       </template>
-
-    <script type="module" src="./script/index.js"></script>
   </body>
 </html>
