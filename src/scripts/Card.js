@@ -23,6 +23,7 @@ export class Card {
   // удаляем карточку
   _deleteCard() {
     this._element.remove();
+    this._element = null;
   }
 
   // вешаем слушаетелей

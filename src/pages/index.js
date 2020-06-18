@@ -99,7 +99,7 @@ validationClassArray.forEach((validationElement) => {
 // загружаем карточки по умолчанию
 const cardList = new Section(
   {
-    data: initialCards.reverse(),
+    data: initialCards,
     renderer: (item) => {
       const card = new Card({
         data: item,
@@ -108,7 +108,7 @@ const cardList = new Section(
         },
       }, cardElements.cardSelector);
       const cardElement = card.createCard();
-      cardList.addItem(cardElement);
+      cardList.addItem(cardElement, true);
     },
   }, cardElements.cardSectionSelector,
 );
