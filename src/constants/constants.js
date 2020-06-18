@@ -5,7 +5,6 @@ export const formValidationElements = {
   inactiveButtonClass: 'popup__button-submit_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error',
-  errorSelector: '.popup__input-error',
 };
 
 // элементы Popup
@@ -23,7 +22,7 @@ export const popupElements = {
   popupOpenClass: 'popup_opened',
   popupOverlayClass: 'popup__overlay',
   popupButtonCloseClass: 'popup__button-close',
- 
+  inputSelector: '.popup__input',
 };
 
 // элементы профайла
@@ -46,8 +45,8 @@ export const cardElements = {
   cardLikeActiveClass: 'card__like_active',
 };
 
-const addCardPopup = document.querySelector(popupElements.popupAddCardSelector);
-const editProfilePopup = document.querySelector(popupElements.popupEditSelector);
+export const addCardPopup = document.querySelector(popupElements.popupAddCardSelector);
+export const editProfilePopup = document.querySelector(popupElements.popupEditSelector);
 
 // инпуты попапа с карточками и редактирования профайла
 export const addCardPlace = addCardPopup.querySelector(popupElements.inputTitleSelector);
@@ -57,9 +56,8 @@ export const editPopupOccupation = editProfilePopup.querySelector(popupElements.
 export const editButton = document.querySelector(profileElements.editButtonSelector);
 export const addButton = document.querySelector(profileElements.addButtonSelector);
 
-// массивы попапов и форм
+// массивы попапов
 export const popupArray = Array.from(document.querySelectorAll(popupElements.popup));
-export const popupFormArray = Array.from(document.querySelectorAll(popupElements.formSelector));
 
 
 // массив с карточками, которые загружаются по умолчанию

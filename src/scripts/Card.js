@@ -29,7 +29,7 @@ export class Card {
   _setEventListeners() {
     this._element.querySelector(cardElements.cardLikeSelector).addEventListener('click', () => { this._toggleLike(); });
     this._element.querySelector(cardElements.cardDeleteButtonSelector).addEventListener('click', () => { this._deleteCard(); });
-    this._element.querySelector(cardElements.cardPhotoSelector).addEventListener('click', () => { this._hanldeCardClick(); });
+    this._element.querySelector(cardElements.cardPhotoSelector).addEventListener('click', (evt) => { this._hanldeCardClick(evt); });
   }
 
   // создаем карточку

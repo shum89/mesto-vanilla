@@ -12,12 +12,13 @@ import {
   initialCards,
   editButton,
   addButton,
-  popupFormArray,
   formValidationElements,
   editPopupOccupation,
   editPopupName,
   addCardPlace,
   addCardLink,
+  addCardPopup,
+  editProfilePopup,
 } from '../constants/constants.js';
 
 // функция добавления карточек по умолчанию
@@ -25,6 +26,15 @@ const userInfo = new UserInfo({
   userName: profileElements.userNameSelector,
   userOccupation: profileElements.userOccupationSelector,
 });
+
+// создаем классы для валидации попапов
+const formValidationAddCard = new FormValidator(formValidationElements, addCardPopup);
+const formValidationEdit = new FormValidator(formValidationElements, editProfilePopup);
+
+// создаем массив из классов, чтобы потом включить валидацию
+const validationClassArray = [formValidationAddCard, formValidationEdit];
+
+const popupImage = new PopupWithImage(popupElements.popupImageSelector);
 
 // класс редактирования профиля
 const popupEdit = new PopupWithForm(
@@ -37,6 +47,9 @@ const popupEdit = new PopupWithForm(
     setInputFields: () => {
       editPopupName.value = userInfo.getUserInfo().name;
       editPopupOccupation.value = userInfo.getUserInfo().occupation;
+    },
+    resetValidation: () => {
+      formValidationEdit.setDefaultState();
     },
   },
 );
@@ -51,9 +64,8 @@ const popupAdd = new PopupWithForm(
         renderer: (item) => {
           const card = new Card({
             data: item,
-            handleCardClick: () => {
-              const popupImage = new PopupWithImage(item, popupElements.popupImageSelector);
-              popupImage.open();
+            handleCardClick: (evt) => {
+              popupImage.open(evt);
             },
           }, cardElements.cardSelector);
           const cardElement = card.createCard();
@@ -67,6 +79,9 @@ const popupAdd = new PopupWithForm(
       addCardPlace.value = '';
       addCardLink.value = '';
     },
+    resetValidation: () => {
+      formValidationAddCard.setDefaultState();
+    },
   },
 );
 
@@ -77,25 +92,19 @@ editButton.addEventListener('click', () => popupEdit.open());
 addButton.addEventListener('click', () => popupAdd.open());
 
 // включаем валидацию
-const enableValidation = (validationElements, formSelector) => {
-  const validationClass = new FormValidator(validationElements, formSelector);
-  return validationClass.enableValidation();
-};
-
-popupFormArray.forEach((popupForm) => {
-  enableValidation(formValidationElements, popupForm);
+validationClassArray.forEach((validationElement) => {
+  validationElement.enableValidation();
 });
 
 // загружаем карточки по умолчанию
 const cardList = new Section(
   {
-    data: initialCards,
+    data: initialCards.reverse(),
     renderer: (item) => {
       const card = new Card({
         data: item,
-        handleCardClick: () => {
-          const popupImage = new PopupWithImage(item, popupElements.popupImageSelector);
-          popupImage.open();
+        handleCardClick: (evt) => {
+          popupImage.open(evt);
         },
       }, cardElements.cardSelector);
       const cardElement = card.createCard();
