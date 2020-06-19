@@ -12,25 +12,25 @@ export class FormValidator {
   }
 
   // проверяем есть ли невалидный инпут
-  _hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => !inputElement.validity.valid);
+  _hasInvalidInput() {
+    return this._inputList.some((inputElement) => !inputElement.validity.valid);
   }
 
   // устанавливаем состояние кнопки
-  _setButtonState(buttonElement, mark) {
+  _setButtonState(mark) {
     if (mark === false) {
-      buttonElement.classList.remove(this._inactiveButtonClass);
-      buttonElement.disabled = false;
+      this._submitButton.classList.remove(this._inactiveButtonClass);
+      this._submitButton.disabled = false;
     }
     if (mark === true) {
-      buttonElement.classList.add(this._inactiveButtonClass);
-      buttonElement.disabled = true;
+      this._submitButton.classList.add(this._inactiveButtonClass);
+      this._submitButton.disabled = true;
     }
   }
 
   // тогглим состояние кнопки
-  _toggleButtonState(buttonElement, inputList) {
-    this._setButtonState(buttonElement, this._hasInvalidInput(inputList));
+  _toggleButtonState() {
+    this._setButtonState(this._hasInvalidInput());
   }
 
   // показываем ошибку
@@ -46,7 +46,7 @@ export class FormValidator {
   _hideInputError(inputElement) {
     const errorElement = this._formSelector.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
-    errorElement.classList.add(this._errorClass);
+    errorElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
   }
 
@@ -64,7 +64,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState(this._submitButton, this._inputList);
+        this._toggleButtonState();
       });
     });
   }
@@ -74,7 +74,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
-    this._setButtonState(this._submitButton, true);
+    this._setButtonState(true);
   }
 
   // запускаем валидацию

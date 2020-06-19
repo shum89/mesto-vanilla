@@ -53,6 +53,14 @@ const popupEdit = new PopupWithForm(
     },
   },
 );
+// генерируем карточку
+const generateCard = (item) => {
+  const card = new Card({
+    data: item,
+    handleCardClick: popupImage.open.bind(popupImage),
+  }, cardElements.cardSelector);
+  return card.createCard();
+};
 
 // класс добавления новых карточек
 const popupAdd = new PopupWithForm(
@@ -62,14 +70,7 @@ const popupAdd = new PopupWithForm(
       const newCard = new Section({
         data: [cardItem],
         renderer: (item) => {
-          const card = new Card({
-            data: item,
-            handleCardClick: (evt) => {
-              popupImage.open(evt);
-            },
-          }, cardElements.cardSelector);
-          const cardElement = card.createCard();
-          newCard.addItem(cardElement);
+          newCard.addItem(generateCard(item));
         },
       }, cardElements.cardSectionSelector);
       newCard.renderItems();
@@ -101,14 +102,7 @@ const cardList = new Section(
   {
     data: initialCards,
     renderer: (item) => {
-      const card = new Card({
-        data: item,
-        handleCardClick: (evt) => {
-          popupImage.open(evt);
-        },
-      }, cardElements.cardSelector);
-      const cardElement = card.createCard();
-      cardList.addItem(cardElement, true);
+      cardList.addDefaultItem(generateCard(item));
     },
   }, cardElements.cardSectionSelector,
 );

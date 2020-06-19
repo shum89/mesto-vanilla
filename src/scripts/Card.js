@@ -3,6 +3,7 @@ import { cardElements } from '../constants/constants.js';
 
 export class Card {
   constructor({ data, handleCardClick }, cardSelector) {
+    this._data = data;
     this._cardSelector = cardSelector;
     this._name = data.name;
     this._link = data.link;
@@ -30,7 +31,7 @@ export class Card {
   _setEventListeners() {
     this._element.querySelector(cardElements.cardLikeSelector).addEventListener('click', () => { this._toggleLike(); });
     this._element.querySelector(cardElements.cardDeleteButtonSelector).addEventListener('click', () => { this._deleteCard(); });
-    this._element.querySelector(cardElements.cardPhotoSelector).addEventListener('click', (evt) => { this._hanldeCardClick(evt); });
+    this._element.querySelector(cardElements.cardPhotoSelector).addEventListener('click', () => { this._hanldeCardClick(this._data);});
   }
 
   // создаем карточку

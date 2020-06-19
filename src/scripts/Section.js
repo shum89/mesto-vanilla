@@ -13,11 +13,12 @@ export default class Section {
   }
 
   // добавляем элемент в секцию
-  addItem(element, initialCards) {
-    if (initialCards === true) {
+  addItem(element) {
+    this._container.prepend(element);
+  }
+
+  // добавляем элементы по умолчанию
+  addDefaultItem(element) {
     this._container.append(element);
-    } else {
-      this._container.prepend(element);
-    }
   }
 }
