@@ -1,0 +1,20 @@
+.profile__edit-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../../images/pen-avatar.svg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+    display: block;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+.profile__edit-avatar::after {
+
+}

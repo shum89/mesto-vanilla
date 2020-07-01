@@ -13,9 +13,12 @@ export const popupElements = {
   popupEditSelector: '#popup-edit',
   popupAddCardSelector: '#popup-add-card',
   popupImageSelector: '#popup-image',
+  popupDeleteSelector: '#popup-delete',
+  popupUpdateAvatarSelector: '#popup-avatar',
   inputTitleSelector: '#input-title',
   inputSubtitleSelector: '#input-subtitle',
   popupButtonSubmitSelector: '.popup__button-submit',
+  popupButtonSubmitLoading: 'popup__button-submit_loading',
   popupPhotoSelector: '.popup__photo',
   popupCaptionSelector: '.popup__caption',
   formSelector: '.popup__form',
@@ -31,6 +34,8 @@ export const profileElements = {
   userOccupationSelector: '.profile__subtitle',
   editButtonSelector: '.profile__edit-button',
   addButtonSelector: '.profile__add-button',
+  userAvatarImageSelector: '.profile__avatar-image',
+  userAvatarSelector: '.profile__avatar',
 };
 
 // элементы карточек
@@ -43,10 +48,13 @@ export const cardElements = {
   cardPhotoSelector: '.card__photo',
   cardTitleSelector: '.card__title',
   cardLikeActiveClass: 'card__like_active',
+  cardLikeCounter: '.card__like-counter',
 };
 
+// попапы
 export const addCardPopup = document.querySelector(popupElements.popupAddCardSelector);
 export const editProfilePopup = document.querySelector(popupElements.popupEditSelector);
+export const  editPopupAvatar = document.querySelector(popupElements.popupUpdateAvatarSelector);
 
 // инпуты попапа с карточками и редактирования профайла
 export const addCardPlace = addCardPopup.querySelector(popupElements.inputTitleSelector);
@@ -55,41 +63,21 @@ export const editPopupName = editProfilePopup.querySelector(popupElements.inputT
 export const editPopupOccupation = editProfilePopup.querySelector(popupElements.inputSubtitleSelector);
 export const editButton = document.querySelector(profileElements.editButtonSelector);
 export const addButton = document.querySelector(profileElements.addButtonSelector);
+export const editAvatarInput = editPopupAvatar.querySelector(popupElements.inputTitleSelector);
+export const avatar = document.querySelector(profileElements.userAvatarSelector);
 
-// массивы попапов
-export const popupArray = Array.from(document.querySelectorAll(popupElements.popup));
+// пути для аpi
+export const urlPath = {
+  userInfo: 'users/me/',
+  cards: 'cards/',
+  avatar: 'avatar',
+  likes: 'likes/',
+}
+// ссылка
+export const baseUrl = 'https://mesto.nomoreparties.co/v1/cohort-12/';
 
-
-// массив с карточками, которые загружаются по умолчанию
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link:
-        'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-];
+// headers с токеном
+export const headers = {
+  authorization: 'd2854785-f942-4a21-9d80-03fbc6fb281b',
+      'Content-Type': 'application/json',
+};

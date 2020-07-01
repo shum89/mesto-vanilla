@@ -1,6 +1,6 @@
 @import url(./_action/popup__button-submit_action.css);
 @import url(./_disabled/popup__button-submit_disabled.css);
-
+@import url(./_loading/popup__button-submit_loading.css);
 .popup__button-submit {
   width: 83.25%;
   text-align: center;
@@ -14,6 +14,8 @@
   align-self: center;
   outline: none;
 }
+
+
 .popup__button-submit:disabled {
   border: 1px solid;
 }
