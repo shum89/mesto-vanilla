@@ -10,9 +10,8 @@ export default class Api {
             if (res.ok) {
                 return res.json()
             }
-            Promise.reject(res.status)
-        }).catch((err) =>
-            console.log(`Oopsie-daisy:${err}`))
+           return Promise.reject(`Oh my, ошибочка вышла:${res.status}`)
+        })
     }
 // получаем информация о пользователе
     getUserInfo() {
@@ -29,7 +28,6 @@ export default class Api {
     }
 // меняем аватар
     updateUserAvatar(data) {
-        console.log(data)
         return this._fetchData(`${urlPath.userInfo}${urlPath.avatar}`, {
             headers: this._headers,
             method: 'PATCH',

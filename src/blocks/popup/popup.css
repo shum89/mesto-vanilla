@@ -16,6 +16,7 @@
 @import url(./_type/popup_type_hidden.css);
 @import url(./_opened/popup_opened.css);
 
+
 .popup {
     position: fixed;
     height: 100%;

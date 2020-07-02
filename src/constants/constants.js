@@ -57,14 +57,16 @@ export const editProfilePopup = document.querySelector(popupElements.popupEditSe
 export const  editPopupAvatar = document.querySelector(popupElements.popupUpdateAvatarSelector);
 
 // инпуты попапа с карточками и редактирования профайла
-export const addCardPlace = addCardPopup.querySelector(popupElements.inputTitleSelector);
-export const addCardLink = addCardPopup.querySelector(popupElements.inputSubtitleSelector);
 export const editPopupName = editProfilePopup.querySelector(popupElements.inputTitleSelector);
 export const editPopupOccupation = editProfilePopup.querySelector(popupElements.inputSubtitleSelector);
 export const editButton = document.querySelector(profileElements.editButtonSelector);
 export const addButton = document.querySelector(profileElements.addButtonSelector);
 export const editAvatarInput = editPopupAvatar.querySelector(popupElements.inputTitleSelector);
 export const avatar = document.querySelector(profileElements.userAvatarSelector);
+
+//формы попапов
+export const popupAddCardForm = addCardPopup.querySelector(popupElements.formSelector);
+export const popupAvatarForm = editPopupAvatar.querySelector(popupElements.formSelector);
 
 // пути для аpi
 export const urlPath = {
