@@ -57,19 +57,31 @@ const userInfo = new UserInfo({
     userAvatar: profileElements.userAvatarImageSelector,
 });
 
+// генерируем карточку
+const generateCard = (item) => {
+    const card = new Card({
+            data: item,
+            handleCardClick: popupImage.open,
+            handleDeleteClick: (item) => {
+                popupDeleteCard.open(item)
+            },
+            handleCardLike: (item, isLiked) => api.like(item, isLiked),
+        },
+        cardElements.cardSelector, userInfo.getUserId());
+    return card.createCard();
+};
 
-let cardList;
+
+let cardList = new Section({
+    renderer: (item) => {
+        cardList.addDefaultItem(generateCard(item))
+    }
+}, cardElements.cardSectionSelector)
 
 Promise.all([api.getUserInfo(), api.getInitialCards()])
     .then(([userData, cards]) => {
         userInfo.setUserInfo(userData);
-        cardList = new Section({
-            data: cards,
-            renderer: (item) => {
-                cardList.addDefaultItem(generateCard(item))
-            }
-        }, cardElements.cardSectionSelector)
-        cardList.renderItems(cards)
+        cardList.renderItems(cards);
     }).catch(err => console.log(err))
 
 // класс редактирования профиля
@@ -124,21 +136,6 @@ const popupUpdateAvatar = new PopupWithForm(
     }
 )
 
-// генерируем карточку
-const generateCard = (item) => {
-    const card = new Card({
-        data: item,
-        handleCardClick: popupImage.open,
-        handleDeleteClick: (item) => {
-            popupDeleteCard.open(item)
-        },
-        handleCardLike: (item, isLiked) => api.like(item, isLiked),
-    },
-        cardElements.cardSelector, userInfo.getUserId());
-    return card.createCard();
-};
-
-
 // класс добавления новых карточек
 const popupAdd = new PopupWithForm(
     popupElements.popupAddCardSelector,
@@ -147,8 +144,7 @@ const popupAdd = new PopupWithForm(
             popupAdd.renderLoading(true)
             api.postNewCard(cardItem).then((result) => {
                 cardList.addItem(generateCard(result))
-                cardList.renderItems()
-                 popupAdd.close();
+                popupAdd.close();
             })
                 .catch((err) => {
                 console.log(err)
