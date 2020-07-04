@@ -72,11 +72,11 @@ const generateCard = (item) => {
 };
 
 
-let cardList = new Section({
+const cardList = new Section({
     renderer: (item) => {
         cardList.addDefaultItem(generateCard(item))
     }
-}, cardElements.cardSectionSelector)
+}, cardElements.cardSectionSelector);
 
 Promise.all([api.getUserInfo(), api.getInitialCards()])
     .then(([userData, cards]) => {
